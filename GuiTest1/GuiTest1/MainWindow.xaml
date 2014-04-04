@@ -4,44 +4,72 @@
         Title="MainWindow" Height="350" Width="525" WindowState="Maximized" WindowStyle="None">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Plik">
-                <MenuItem Header="Nowy"/>
-                <MenuItem Header="Otwórz"/>
-                <MenuItem Header="Zapisz"/>
+            <MenuItem Header="File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
                 <Separator/>
-                <MenuItem Header="Zamknij"/>
+                <MenuItem Header="Close"/>
             </MenuItem>
-            <MenuItem Header="Pomoc"/>
+            <MenuItem Header="Help"/>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Right">
             <Label Padding="0,0,0,0" FontSize="9">VGC</Label>
             <Label Padding="0,0,0,0" FontSize="9">Status:</Label>
             <Label Padding="0,0,0,0" FontSize="9" Name="status">Offline</Label>
         </StatusBar>
-        <Button Content="Tutaj jest panel" DockPanel.Dock="Left">
-            
-        </Button>
+        <StackPanel DockPanel.Dock="Left" Width="85" Orientation="Vertical">
+            <Label FontSize="15">Properities</Label>
+            <Separator/>
+            <Label>Start:</Label>
+            <TextBox Name="startTime"></TextBox>
+
+            <Label>Stop:</Label>
+            <TextBox Name="stopTime"></TextBox>
+
+            <Label>End Height:</Label>
+            <TextBox Name="endHeight"></TextBox>
+
+            <Label>Speed</Label>
+            <TextBox Name="speed"></TextBox>
+            <Button>OK</Button>
+        </StackPanel>
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <StackPanel>
-                <Grid DockPanel.Dock="Bottom" ShowGridLines="True">
+                <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button>NIC</Button>
+                    <Button Grid.Column="1">TIMELINE</Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <Grid Height="25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Button>A</Button>
-                    <Button>B</Button>
+                    <Button Grid.Column="1">B</Button>
                 </Grid>
-                <Grid DockPanel.Dock="Bottom" ShowGridLines="True">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Button>A</Button>
-                </Grid>
+                <Border BorderBrush="Black" BorderThickness="2">
+                    <Grid Height="25" ShowGridLines="True" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button>A</Button>
+                    </Grid>
+                </Border>
                 <StackPanel></StackPanel>
             </StackPanel>
-            
         </Grid>
     </DockPanel>
-    
+
 </Window>
