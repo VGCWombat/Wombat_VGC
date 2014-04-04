@@ -18,7 +18,7 @@
             <Label Padding="0,0,0,0" FontSize="9">Status:</Label>
             <Label Padding="0,0,0,0" FontSize="9" Name="status">Offline</Label>
         </StatusBar>
-        <StackPanel DockPanel.Dock="Left" Width="90" Orientation="Vertical">
+        <StackPanel Margin="5,5,0,0" DockPanel.Dock="Left" Width="90" Orientation="Vertical">
             <Label FontSize="15">Properities</Label>
             <Separator/>
             <Grid>
@@ -60,7 +60,7 @@
 
 
         </StackPanel>
-        <Grid>
+        <Grid Margin="5,5,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="*"/>
