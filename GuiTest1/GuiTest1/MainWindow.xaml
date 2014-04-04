@@ -50,6 +50,31 @@
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="1">
+                
+                
+                
+                <!--template for single platform-->
+                <ItemsControl ItemsSource="{Binding costam}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="2">
+                                <Grid Height="25" ShowGridLines="True" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- here should be a template for platform timeline properties-->
+                                    <Button>A</Button>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+                
+                
+                
+                
                 <Grid Height="25">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
@@ -67,7 +92,7 @@
                         <Button>A</Button>
                     </Grid>
                 </Border>
-                <StackPanel></StackPanel>
+                
             </StackPanel>
         </Grid>
     </DockPanel>
