@@ -18,22 +18,43 @@
             <Label Padding="0,0,0,0" FontSize="9">Status:</Label>
             <Label Padding="0,0,0,0" FontSize="9" Name="status">Offline</Label>
         </StatusBar>
-        <StackPanel DockPanel.Dock="Left" Width="85" Orientation="Vertical">
+        <StackPanel DockPanel.Dock="Left" Width="90" Orientation="Vertical">
             <Label FontSize="15">Properities</Label>
             <Separator/>
-            <Label>Start:</Label>
-            <TextBox Name="startTime"></TextBox>
-
-            <Label>Stop:</Label>
-            <TextBox Name="stopTime"></TextBox>
-
-            <Label>End Height:</Label>
-            <TextBox Name="endHeight"></TextBox>
-
-            <Label>Speed</Label>
-            <TextBox Name="speed"></TextBox>
-            
-            <Button>OK</Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Start:</Label>
+                <TextBox Name="startTime" Grid.Column="1"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Stop:</Label>
+                <TextBox Grid.Column="1" Name="stopTime"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Height:</Label>
+                <TextBox Grid.Column="1" Name="endHeight"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Speed</Label>
+                <TextBox Grid.Column="1" Name="speed"></TextBox>
+            </Grid>
+                <Label></Label>
+                <Button>OK</Button>
 
 
 
