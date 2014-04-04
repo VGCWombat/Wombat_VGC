@@ -54,7 +54,7 @@
                 
                 
                 <!--template for single platform-->
-                <ItemsControl ItemsSource="{Binding costam}">
+                <ItemsControl ItemsSource="{Binding platformTimeLine}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border BorderBrush="Black" BorderThickness="2">
@@ -64,7 +64,16 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <!-- here should be a template for platform timeline properties-->
-                                    <Button>A</Button>
+                                    <ItemsControl ItemsSource="{Binding platformProp}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Button Grid.Column="0">A</Button>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    
+                                    <!-- here should be a template for platform timeline-->
+                                    <ItemsControl ItemsSource="{Binding}"></ItemsControl>
                                 </Grid>
                             </Border>
                         </DataTemplate>
