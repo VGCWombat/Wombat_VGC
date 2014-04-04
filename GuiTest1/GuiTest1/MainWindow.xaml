@@ -22,6 +22,24 @@
             
         </Button>
         <Grid>
+            <StackPanel>
+                <Grid DockPanel.Dock="Bottom" ShowGridLines="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button>A</Button>
+                    <Button>B</Button>
+                </Grid>
+                <Grid DockPanel.Dock="Bottom" ShowGridLines="True">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button>A</Button>
+                </Grid>
+                <StackPanel></StackPanel>
+            </StackPanel>
             
         </Grid>
     </DockPanel>
