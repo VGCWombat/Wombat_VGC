@@ -78,6 +78,38 @@
                 </Border>
             </StackPanel>
             <StackPanel Grid.Row="1">
+
+
+                <!--template for single platform-->
+                <ItemsControl ItemsSource="{Binding platform_timeline}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="2">
+                                <Grid Height="25" ShowGridLines="True" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- here should be a template for platform timeline properties-->
+                                    <ItemsControl ItemsSource="{Binding platform_prop}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <!-- wypelnic dane o module-->
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+
+
+
+
+
                 <Border BorderBrush="Black" BorderThickness="2" Margin="2,2,2,2">
                     <Grid Height="25">
                         <Grid.ColumnDefinitions>
