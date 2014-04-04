@@ -13,7 +13,7 @@
             </MenuItem>
             <MenuItem Header="Pomoc"/>
         </Menu>
-        <StatusBar DockPanel.Dock="Bottom">
+        <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Right">
             <Label>VGC</Label>
             <Label>Status:</Label>
             <Label Name="status">Offline</Label>
