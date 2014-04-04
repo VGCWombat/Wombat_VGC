@@ -73,7 +73,15 @@
                                     </ItemsControl>
                                     
                                     <!-- here should be a template for platform timeline-->
-                                    <ItemsControl ItemsSource="{Binding}"></ItemsControl>
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
                                 </Grid>
                             </Border>
                         </DataTemplate>
