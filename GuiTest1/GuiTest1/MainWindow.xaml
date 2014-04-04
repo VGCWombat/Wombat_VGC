@@ -11,39 +11,89 @@
                 <Separator/>
                 <MenuItem Header="Close"/>
             </MenuItem>
-            <MenuItem Header="Pomoc"/>
+            <MenuItem Header="Help"/>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Right">
             <Label Padding="0,0,0,0" FontSize="9">VGC</Label>
             <Label Padding="0,0,0,0" FontSize="9">Status:</Label>
             <Label Padding="0,0,0,0" FontSize="9" Name="status">Offline</Label>
         </StatusBar>
-        <StackPanel DockPanel.Dock="Left" Width="85" Orientation="Vertical">
+        <StackPanel DockPanel.Dock="Left" Width="90" Orientation="Vertical">
             <Label FontSize="15">Properities</Label>
-            <Separator/>
-            <Label>Start:</Label>
-            <TextBox Name="startTime"></TextBox>
-
-            <Label>Stop:</Label>
-            <TextBox Name="stopTime"></TextBox>
-
-            <Label>End Height:</Label>
-            <TextBox Name="endHeight"></TextBox>
-
-            <Label>Speed</Label>
-            <TextBox Name="speed"></TextBox>
-            
-            <Button>OK</Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Start:</Label>
+                <TextBox Name="startTime" Grid.Column="1"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Stop:</Label>
+                <TextBox Grid.Column="1" Name="stopTime"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Height:</Label>
+                <TextBox Grid.Column="1" Name="endHeight"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0">Speed</Label>
+                <TextBox Grid.Column="1" Name="speed"></TextBox>
+            </Grid>
+                <Label></Label>
+                <Button>OK</Button>
 
 
 
 
         </StackPanel>
-
-
-
         <Grid>
-
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button>NIC</Button>
+                    <Button Grid.Column="1">TIMELINE</Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <Grid Height="25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button>A</Button>
+                    <Button Grid.Column="1">B</Button>
+                </Grid>
+                <Border BorderBrush="Black" BorderThickness="2">
+                <Grid Height="25" ShowGridLines="True" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button>A</Button>
+                </Grid>
+                </Border>
+                <StackPanel></StackPanel>
+            </StackPanel>
         </Grid>
     </DockPanel>
 
