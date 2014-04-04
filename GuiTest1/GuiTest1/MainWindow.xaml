@@ -14,10 +14,13 @@
             <MenuItem Header="Pomoc"/>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Label>VGC</Label>
-            <Label>Status:</Label>
-            <Label Name="status">Offline</Label>
+            <Label Padding="0,0,0,0" FontSize="9">VGC</Label>
+            <Label Padding="0,0,0,0" FontSize="9">Status:</Label>
+            <Label Padding="0,0,0,0" FontSize="9" Name="status">Offline</Label>
         </StatusBar>
+        <Button Content="Tutaj jest panel" DockPanel.Dock="Left">
+            
+        </Button>
         <Grid>
             
         </Grid>
