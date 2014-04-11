@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+using System.Diagnostics;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GuiTest1
 {
@@ -20,9 +13,27 @@ namespace GuiTest1
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public List<PlatformMoveEvent> platforms { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
+
+        private void Thumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+        {
+            var thumb = sender as Thumb;
+            if (thumb == null)
+                return;
+
+            var moveEvent = thumb.DataContext as PlatformMoveEvent;
+            if (moveEvent == null)
+                return;
+
+            moveEvent.X += e.HorizontalChange;
+        }
+
+
     }
 }

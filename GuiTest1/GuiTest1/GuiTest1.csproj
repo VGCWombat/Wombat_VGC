@@ -53,6 +53,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="PlatformMoveEvent.cs" />
+    <Compile Include="PlatformSource.cs" />
+    <Compile Include="PlatformTimeLine.cs" />
+    <Compile Include="TimeLineObject.cs" />
+    <Compile Include="ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
