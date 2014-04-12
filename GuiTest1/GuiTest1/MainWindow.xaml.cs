@@ -13,27 +13,11 @@ namespace GuiTest1
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        public List<PlatformMoveEvent> platforms { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            
         }
-
-        private void Thumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
-        {
-            var thumb = sender as Thumb;
-            if (thumb == null)
-                return;
-
-            var moveEvent = thumb.DataContext as PlatformMoveEvent;
-            if (moveEvent == null)
-                return;
-
-            moveEvent.X += e.HorizontalChange;
-        }
-
 
     }
 }

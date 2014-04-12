@@ -1,86 +1,26 @@
-﻿using System.ComponentModel;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Input;
+
+using System.Collections.ObjectModel;
 
 namespace GuiTest1
 {
-    class MainViewModel: INotifyPropertyChanged
+    public class MainViewModel : ViewModelBase
     {
-        #region Collections
-
-        private ObservableCollection<PlatformMoveEvent> _platforms;
-        public ObservableCollection<PlatformMoveEvent> Platforms
-        {
-            get { return _platforms ?? (_platforms = new ObservableCollection<PlatformMoveEvent>()); }
-        }
-
-        private TimeLineObject _selectedObject;
-        public TimeLineObject SelectedObject
-        {
-            get
-            {
-                return _selectedObject;
-            }
-            set
-            {
-               //selector?
-
-                _selectedObject = value;
-                OnPropertyChanged("SelectedObject");
-
-            }
-        }
-
-        #endregion
-
-        
-
-        #region Constructor
-
         public MainViewModel()
         {
-            _platforms = new ObservableCollection<PlatformMoveEvent>(PlatformSource.GetRandomMoves());
+            _moveEvents = new ObservableCollection<MoveEvent>(MoveEvent.GetRandomMoveEvents());
         }
 
-        #endregion
-
-        #region INotifyPropertyChanged
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
+        public ObservableCollection<MoveEvent> Nodes
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            get { return _moveEvents ?? (_moveEvents = new ObservableCollection<MoveEvent>()); }
         }
 
-        #endregion
-
-        #region Scrolling support
-
-        private double _areaHeight = 500;
-        public double AreaHeight
-        {
-            get { return _areaHeight; }
-            set
-            {
-                _areaHeight = value;
-                OnPropertyChanged("AreaHeight");
-            }
-        }
-
-        private double _areaWidth = 500;
-        public double AreaWidth
-        {
-            get { return _areaWidth; }
-            set
-            {
-                _areaWidth = value;
-                OnPropertyChanged("AreaWidth");
-            }
-        }
-
-        #endregion
+        private ObservableCollection<MoveEvent> _moveEvents;
     }
 }
