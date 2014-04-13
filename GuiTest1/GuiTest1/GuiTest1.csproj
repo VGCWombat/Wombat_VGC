@@ -54,6 +54,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MoveEvent.cs" />
+    <Compile Include="MoveThumb.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="ViewMoveEvents.cs" />
     <Page Include="MainWindow.xaml">

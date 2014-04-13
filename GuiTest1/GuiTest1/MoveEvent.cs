@@ -47,8 +47,11 @@ namespace GuiTest1
             get { return location.X; }
             set 
             {
-                location.X = value;
-                OnPropertyChanged("Left");
+                if(value>=0)
+                {
+                    location.X = value;
+                    OnPropertyChanged("Left");
+                }
             }
         }
         public double Top
