@@ -13,12 +13,6 @@ namespace GuiTest1
     /// </summary>
     public partial class App : Application
     {   
-        private void OnStartup(object sender, StartupEventArgs e)
-        {
-            // Create the ViewModel and expose it using the View's DataContext
-            MainWindow view = new MainWindow();
-            view.DataContext = new MainViewModel();
-            view.Show();
-        }
+
     }
 }

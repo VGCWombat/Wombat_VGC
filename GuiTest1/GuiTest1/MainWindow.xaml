@@ -3,6 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:GuiTest1"
         Title="MainWindow" Height="350" Width="525" WindowState="Maximized" WindowStyle="None">
+    <Window.Resources>
+        <local:ViewMoveEvents x:Key="moves"/>
+        
+        <DataTemplate x:Key="moveEvent">
+            <Grid Height="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Stretch">
+                    <TextBlock Grid.Column="0" Text="{Binding Path=MoveID}" HorizontalAlignment="Center"></TextBlock>
+                </Border>
+                <Canvas Grid.Column="1">
+                    <Rectangle Canvas.Left="{Binding Path=Left}" Canvas.Top="{Binding Path=Top}" Width="{Binding Path=Lenght}" Height="25" Fill="BurlyWood"></Rectangle>
+                </Canvas>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -52,63 +70,12 @@
                     <Button Grid.Column="1">TIMELINE</Button>
                 </Grid>
             </StackPanel>
-            <StackPanel Grid.Row="1"> 
-                
-                <Grid Height="25">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button>A</Button>
-                    <Button Grid.Column="1">B</Button>
-                </Grid>
-                <ItemsControl ItemsSource="{Binding Path=MoveEvents}">
-                    <ItemsControl.ItemContainerStyle>
-                        <Style>
-                            <Setter Property="Canvas.Left" Value="{Binding Path=Row}" />
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                            </Grid>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Canvas>
-                                <Rectangle Canvas.Left="{Binding Path=Left}" Canvas.Top="{Binding Path=Top}" Width="50" Fill="Chocolate"></Rectangle>
-                            </Canvas>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-                <Border BorderBrush="Black" BorderThickness="2">
-                    <Grid Height="25" ShowGridLines="True" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Button>A</Button>
-                        <!-- here should be a template for platform timeline-->
-                        <ItemsControl ItemsSource="{Binding Path=platforms}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Canvas>
-                                            <Rectangle Width="{Binding Path=Duration}">
-                                            </Rectangle>
-                                        </Canvas>
-                                    </Grid>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </Grid>
-                </Border>
-                
+            <StackPanel Grid.Row="1">
+                <ItemsControl 
+            		ItemsSource="{Binding Source={StaticResource moves}}"
+            		ItemTemplate="{Binding Source={StaticResource moveEvent}}"
+            		VerticalAlignment="Stretch"
+            		HorizontalAlignment="Stretch"/>
             </StackPanel>
         </Grid>
     </DockPanel>

@@ -1,38 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
+﻿using System.Windows;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
+
 
 namespace GuiTest1
 {
     public class MoveEvent: ViewModelBase
     {
-        public static Random random = new Random();
 
-        private Point _location;
+        private Point location;
+        private double lenght;
+        private int id;
+        public MoveEvent()
+        {
+
+        }
+
+        public MoveEvent(int id, Point location, double lenght)
+        {
+            this.id = id;
+            this.lenght = lenght;
+            this.location = location;
+        }
+
+        public int MoveID
+        {
+            get { return id; }
+            set
+            {
+                id = value;
+                OnPropertyChanged("MoveID");
+            }
+        }
+
+        public double Lenght
+        {
+            get { return lenght; }
+            set
+            {
+                lenght = value;
+                OnPropertyChanged("Lenght");
+            }
+        }
         public double Left 
         {
-            get { return _location.X; }
-            set { _location.X = value; }
+            get { return location.X; }
+            set 
+            {
+                location.X = value;
+                OnPropertyChanged("Left");
+            }
         }
         public double Top
         {
-            get { return _location.Y; }
-            set { _location.Y = value; }
+            get { return location.Y; }
+            set
+            {
+                location.Y = value;
+                OnPropertyChanged("Top");
+            }
         }
 
-        public static MoveEvent GetRandomMoveEvent()
-        {
-            var moveEvent = new MoveEvent{ _location= new Point(random.Next(0,100), 0)};
-            return moveEvent;
-        }
-        public static IEnumerable<MoveEvent> GetRandomMoveEvents()
-        {
-
-            return Enumerable.Range(5, random.Next(6, 10)).Select(x => GetRandomMoveEvent());
-        }
     }
+
 }
