@@ -16,7 +16,7 @@ namespace GuiTest1
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
 
     }
