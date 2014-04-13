@@ -56,9 +56,6 @@
                 <Label></Label>
             <Button>OK</Button>
 
-
-
-
         </StackPanel>
         <Grid Margin="5,5,0,0">
             <Grid.RowDefinitions>
@@ -66,7 +63,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel>
-        <Grid>
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
                         <ColumnDefinition Width="*"/>
@@ -84,16 +81,30 @@
                     <Button>A</Button>
                     <Button Grid.Column="1">B</Button>
                 </Grid>
-                <Border BorderBrush="Black" BorderThickness="2">
-                <Grid Height="25" ShowGridLines="True" >
+                <Grid Height="25" ShowGridLines="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Button>A</Button>
                 </Grid>
-                </Border>
-                <StackPanel></StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="A" Background="Bisque"/>
+                    <Button Grid.Column="1" Name="Button" Content="Yo Mamma"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="A"/>
+                    <Rectangle Grid.Column="1" Height="10" Width="40" Fill="GreenYellow"/>
+                </Grid>
+                
             </StackPanel>
         </Grid>
     </DockPanel>
