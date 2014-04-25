@@ -1,0 +1,32 @@
+﻿<Window x:Class="GuiTest1.Window_dimension"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window_dimension" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,-5,0,5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Dimension x:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="Dimension y:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Name="dimensionX" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" />
+            <TextBox Name="dimensionY" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="m" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <Label Grid.Row="1" Grid.Column="1" Content="m" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        </Grid>
+        <Button Grid.Row="1" Content="Foward" FontSize="25" Click="Button_Click"/>
+       
+
+
+    </Grid>
+</Window>
