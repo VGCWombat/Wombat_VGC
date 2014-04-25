@@ -63,7 +63,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel>
-<<<<<<< HEAD
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
@@ -83,7 +83,7 @@
                     <Button Grid.Column="1">B</Button>
                 </Grid>
                 <Grid Height="25" ShowGridLines="True">
-=======
+
                 <Border Margin="2,2,2,2">
                     <Grid Margin="2,2,0,0">
                         <Grid.ColumnDefinitions>
@@ -140,7 +140,7 @@
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="2" Margin="2,2,2,2">
                 <Grid Height="25" ShowGridLines="True" >
->>>>>>> ded2c20e918bbadff3274bed8ad3559605428e10
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
                         <ColumnDefinition Width="*"/>
