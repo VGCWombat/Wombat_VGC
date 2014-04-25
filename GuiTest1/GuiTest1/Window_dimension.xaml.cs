@@ -33,8 +33,14 @@ namespace GuiTest1
             int valY = Convert.ToInt16(dimensionY.Text);
             Window1 creator = new Window1(valX,valY);
             creator.Show();
+            this.Close();
             
             
+        }
+
+        internal void show()
+        {
+            throw new NotImplementedException();
         }
     }
 }

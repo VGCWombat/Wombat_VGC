@@ -52,9 +52,7 @@ namespace GuiTest1
             double wysokosc = canvas.ActualHeight;
             double szerokosc = canvas.ActualWidth;
             
-            Add.Content = startUp;
-            Delete.Content = canvas.ActualWidth;
-           
+            
 
             for(int i=0;i<row;i++)
 
@@ -87,5 +85,10 @@ namespace GuiTest1
         public static double ActualHeightPropertyHeight { get; set; }
 
         public static double ActualWidthPropertyWidth { get; set; }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

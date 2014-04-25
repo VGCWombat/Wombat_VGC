@@ -65,6 +65,10 @@
     <Compile Include="Window_dimension.xaml.cs">
       <DependentUpon>Window_dimension.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MoveEvent.cs" />
+    <Compile Include="MoveThumb.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="ViewMoveEvents.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

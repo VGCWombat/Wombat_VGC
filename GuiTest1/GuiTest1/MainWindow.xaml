@@ -18,7 +18,7 @@
                 <ContentPresenter Content="{TemplateBinding ContentControl.Content}"/>
             </Grid>
         </ControlTemplate>
-
+        
         <!--MoveEvent template-->
         <DataTemplate x:Key="moveEvent">
             <Grid Height="25">
@@ -36,15 +36,15 @@
                 </Canvas>
             </Grid>
         </DataTemplate>
-
-
+        
+        
     </Window.Resources>
     <DockPanel>
-
+        
         <!-- menu and sidebar-->
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New"/>
+                <MenuItem Header="New" Click="MenuItem_Click"/>
                 <MenuItem Header="Open"/>
                 <MenuItem Header="Save"/>
                 <Separator/>
@@ -73,8 +73,8 @@
             <TextBox Name="speed"></TextBox>
             <Button>OK</Button>
         </StackPanel>
-
-        <!--timeline window-->
+        
+        <!--timeline window-->        
         <Grid Margin="5,5,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
